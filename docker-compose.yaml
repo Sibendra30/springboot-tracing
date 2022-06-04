@@ -1,0 +1,15 @@
+version: "3.9"
+services:
+  customer-service:
+    build: ./customer
+    network_mode: "host"
+    depends_on:
+      - "order-service"
+  order-service:
+    build: ./ordering
+    network_mode: "host"
+    depends_on:
+      - "inventory-service"
+  inventory-service:
+    build: ./inventory
+    network_mode: "host"
