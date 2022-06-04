@@ -15,7 +15,8 @@ public class CustomerController {
     }
 
     @GetMapping("/customer")
-    public String getCustomer() {
+    public String getCustomer() throws Exception{
+        Thread.sleep(200);
         this.restTemplate.getForEntity("http://localhost:8082/order", String.class).getBody();
         return "Hello from customer service...";
     }

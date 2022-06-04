@@ -15,7 +15,8 @@ public class OrderingController {
     }
 
     @GetMapping("/order")
-    public String getOrderDetails() {
+    public String getOrderDetails() throws Exception{
+        Thread.sleep(200);
         return this.restTemplate.getForEntity("http://localhost:8083/inventory", String.class).getBody();
     }
 

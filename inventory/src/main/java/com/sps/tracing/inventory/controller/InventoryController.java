@@ -8,7 +8,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class InventoryController {
 
     @GetMapping("/inventory")
-    public String getInventoryDetails() {
+    public String getInventoryDetails() throws Exception{
+        Thread.sleep(200);
         return "Success";
     }
 }
